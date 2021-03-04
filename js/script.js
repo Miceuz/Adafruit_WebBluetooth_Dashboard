@@ -402,20 +402,32 @@ async function connect() {
     device.addEventListener('gattserverdisconnected', onDisconnected);
     let server = await device.gatt.connect();
     const availableServices = await server.getPrimaryServices();
-
+    
+    logMsg(availableServices);
+    
     // Create the panels only if service available
     for (let panelId of Object.keys(panels)) {
       if (panels[panelId].condition == undefined || panels[panelId].condition()) {
-        if (getFullId(panels[panelId].serviceId).substr(0, 4) == "adaf") {
-          for (const service of availableServices) {
-            if (getFullId(panels[panelId].serviceId) == service.uuid) {
-              createPanel(panelId);
-            }
+        logMsg("considering panel" + panelId);
+
+        for (const service of availableServices) {
+          if (getFullId(panels[panelId].serviceId) == service.uuid) {
+            createPanel(panelId);
+            logMsg("adding panel" + panelId);
           }
-        } else {
-          // Non-custom ones such as battery are always active
-          createPanel(panelId);
         }
+
+//         if (getFullId(panels[panelId].serviceId).substr(0, 4) == "adaf") {
+//           for (const service of availableServices) {
+//             if (getFullId(panels[panelId].serviceId) == service.uuid) {
+//               createPanel(panelId);
+//             }
+//           }
+//         } else {
+//           // Non-custom ones such as battery are always active
+//           logMsg("adding panel" + panelId);
+//           createPanel(panelId);
+//         }
       }
     }
 
