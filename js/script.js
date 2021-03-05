@@ -100,8 +100,8 @@ let panels = {
     serviceId: '77575808-19fb-4289-851e-50a4bafee0a4',
     characteristicId: '28651714-1857-4f47-b62c-916b6e7ec097',
     panelType: "graph",
-    structure: ['Uint16'],
-    data: {light:[]},
+    structure: ['Uint16', 'Uint16'],
+    data: {UV:[], Blue:[]},
     properties: ['notify']
   },
   battery: {
