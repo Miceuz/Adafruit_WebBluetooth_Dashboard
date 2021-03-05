@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   autoscroll.addEventListener('click', clickAutoscroll);
   showTimestamp.addEventListener('click', clickTimestamp);
   darkMode.addEventListener('click', clickDarkMode);
-  knownOnly.addEventListener('click', clickKnownOnly);
+//   knownOnly.addEventListener('click', clickKnownOnly);
 
   if ('bluetooth' in navigator) {
     const notSupported = document.getElementById('notSupported');
