@@ -56,7 +56,7 @@ var Graph = function(canvas) {
         }]
       },
       tooltips: {
-        enabled: false
+        enabled: true
       },
     }
   };
