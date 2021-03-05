@@ -30,7 +30,7 @@ const darkSS = document.getElementById('dark');
 const darkMode = document.getElementById('darkmode');
 const dashboard = document.getElementById('dashboard');
 const fpsCounter = document.getElementById("fpsCounter");
-const knownOnly = document.getElementById("knownonly");
+const knownOnly = {};//document.getElementById("knownonly");
 
 let colorIndex = 0;
 let activePanels = [];
