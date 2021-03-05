@@ -30,7 +30,7 @@ const darkSS = document.getElementById('dark');
 const darkMode = document.getElementById('darkmode');
 const dashboard = document.getElementById('dashboard');
 const fpsCounter = document.getElementById("fpsCounter");
-const knownOnly = {};//document.getElementById("knownonly");
+const knownOnly = {checked:false};//document.getElementById("knownonly");
 
 let colorIndex = 0;
 let activePanels = [];
@@ -708,7 +708,7 @@ function loadAllSettings() {
   autoscroll.checked = loadSetting('autoscroll', true);
   showTimestamp.checked = loadSetting('timestamp', false);
   darkMode.checked = loadSetting('darkmode', false);
-  knownOnly.checked = true;//loadSetting('knownonly', true);
+  knownOnly.checked = false;//loadSetting('knownonly', true);
 }
 
 function loadSetting(setting, defaultValue) {
