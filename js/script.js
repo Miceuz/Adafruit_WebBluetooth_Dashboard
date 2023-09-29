@@ -9,7 +9,8 @@
 
 'use strict';
 
-import * as THREE from 'https://threejs.org/build/three.module.js';
+// import * as THREE from 'https://threejs.org/build/three.module.js';
+import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import {GLTFLoader} from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 
 let device;
